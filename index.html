@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CASE 16 - TẤT CẢ + transform + vertical (cực đoan)</title>
+    <title>CASE 16 - TẤT CẢ + transform + vertical (cực đoan, có html transform)</title>
     <link rel="stylesheet" href="style.css" />
-<!-- CASE 16: TẤT CẢ + transform + vertical (cực đoan)
-     Như case 15 nhưng thêm body transform+filter (fixed lệch), vertical-rl, contain:strict trên host. -->
-<style>@media screen and (max-width:1480px){html{font-size:0.6578947368vw}}body{transform:scale(.8);transform-origin:0 0;filter:contrast(1.1);writing-mode:vertical-rl;letter-spacing:.2em!important;text-transform:uppercase!important;font-weight:900!important;height:2400px}*{line-height:.6!important}body>div{contain:strict!important;opacity:.7!important}</style>
+<!-- CASE 16: TẤT CẢ + transform + vertical (cực đoan, có html transform)
+     Như case 15 nhưng thêm body transform+filter, vertical-rl, contain:strict trên host (html>div) và html transform (giới hạn đã biết: fixed tính theo html). -->
+<style>@media screen and (max-width:1480px){html{font-size:0.6578947368vw}}body{transform:scale(.8);transform-origin:0 0;filter:contrast(1.1);writing-mode:vertical-rl;letter-spacing:.2em!important;text-transform:uppercase!important;font-weight:900!important;height:2400px}html{transform:translateZ(0);writing-mode:vertical-rl;letter-spacing:.2em!important;text-transform:uppercase!important}*{line-height:.6!important}body>div,html>div{contain:strict!important;opacity:.7!important}</style>
 </head>
 <body>
 <div id="__case" style="position:fixed;left:8px;top:8px;max-width:360px;z-index:2147483646;background:#111;color:#fff;font:12px/1.4 monospace;padding:6px 8px;border-radius:6px;letter-spacing:0;text-transform:none;writing-mode:horizontal-tb;direction:ltr;pointer-events:none;white-space:normal;text-indent:0;font-weight:400;font-style:normal;text-shadow:none">
-<b>CASE 16</b>: TẤT CẢ + transform + vertical (cực đoan)<br><span id="__fs"></span></div>
+<b>CASE 16</b>: TẤT CẢ + transform + vertical (cực đoan, có html transform)<br><span id="__fs"></span></div>
 <script>(function(){var u=function(){var e=document.getElementById('__fs');if(e)e.textContent='html font-size='+getComputedStyle(document.documentElement).fontSize+' | w='+innerWidth+'px'};addEventListener('DOMContentLoaded',u);addEventListener('resize',u);u()})()</script>
 
     <header class="site-header">
